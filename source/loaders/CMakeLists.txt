@@ -1,7 +1,7 @@
 # Check if loaders are enabled
-if(NOT OPTION_BUILD_LOADERS)
-	return()
-endif()
+#if(NOT OPTION_BUILD_LOADERS)
+#	return()
+#endif()
 
 # Plugins options
 option(OPTION_BUILD_LOADERS_C "Build C Foreign Function Interface library loader plugin." OFF)
@@ -14,17 +14,17 @@ option(OPTION_BUILD_LOADERS_FILE "Build File System loader plugin." OFF)
 option(OPTION_BUILD_LOADERS_JAVA "Build Java Virtual Machine loader plugin." OFF)
 option(OPTION_BUILD_LOADERS_JL "Build Julia 1.6 loader plugin." OFF)
 option(OPTION_BUILD_LOADERS_JSM "Build JavaScript SpiderMonkey 4.8 loader plugin." OFF)
-option(OPTION_BUILD_LOADERS_JS "Build JavaScript V8 5.1+ loader plugin." OFF)
-option(OPTION_BUILD_LOADERS_LLVM "Build LLVM 11 loader plugin." OFF)
+option(OPTION_BUILD_LOADERS_JS "Build JavaScript V8 5.1+ loader plugin." ON)
+option(OPTION_BUILD_LOADERS_LLVM "Build LLVM 11 loader plugin." ON)
 option(OPTION_BUILD_LOADERS_LUA "Build LuaJIT2 v2.1 (OpenResty fork) loader plugin." OFF)
 option(OPTION_BUILD_LOADERS_MOCK "Build mock loader loader plugin." ON)
 option(OPTION_BUILD_LOADERS_NODE "Build NodeJS v12.21.0 JavaScript Runtime loader plugin." OFF)
-option(OPTION_BUILD_LOADERS_PY "Build Python 3.9 C API loader plugin." OFF)
+option(OPTION_BUILD_LOADERS_PY "Build Python 3.9 C API loader plugin." ON)
 option(OPTION_BUILD_LOADERS_RB "Build Ruby 2.7 C API loader plugin." OFF)
 option(OPTION_BUILD_LOADERS_RS "Build Rust 1.55.0 loader plugin." OFF)
 option(OPTION_BUILD_LOADERS_RPC "Build cURL Remote Procedure Call loader plugin." OFF)
-option(OPTION_BUILD_LOADERS_TS "Build TypeScript 3.9.7 Runtime loader plugin." OFF)
-option(OPTION_BUILD_LOADERS_WASM "Build WebAssembly Virtual Machine loader plugin." OFF)
+option(OPTION_BUILD_LOADERS_TS "Build TypeScript 3.9.7 Runtime loader plugin." ON)
+option(OPTION_BUILD_LOADERS_WASM "Build WebAssembly Virtual Machine loader plugin." ON)
 
 # Plugin packages
 add_subdirectory(c_loader) # Foreign Function Interface library

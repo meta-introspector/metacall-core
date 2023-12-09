@@ -83,7 +83,7 @@ option(OPTION_BUILD_EXTENSIONS	"Build extensions."											ON)
 option(OPTION_BUILD_SCRIPTS		"Build scripts."											ON)
 option(OPTION_BUILD_SERIALS		"Build serials."											ON)
 option(OPTION_BUILD_DETOURS		"Build detours."											ON)
-option(OPTION_BUILD_PORTS		"Build ports."												OFF)
+option(OPTION_BUILD_PORTS		"Build ports."												ON)
 option(OPTION_BUILD_LOG_PRETTY	"Build logs in a human readable format."					ON)
 option(OPTION_BUILD_PIC			"Build with position independent code."						ON)
 option(OPTION_BUILD_SECURITY	"Build with stack-smashing protection and source fortify."	ON)
@@ -91,7 +91,7 @@ option(OPTION_BUILD_GUIX		"Disable all build system unreproductible operations."
 option(OPTION_GIT_HOOKS			"Disable git hooks when running in CI/CD."					ON)
 option(OPTION_FORK_SAFE			"Enable fork safety."										ON)
 option(OPTION_THREAD_SAFE		"Enable thread safety."										OFF)
-option(OPTION_COVERAGE			"Enable coverage."											OFF)
+option(OPTION_COVERAGE			"Enable coverage."											ON)
 option(OPTION_MEMORY_TRACKER	"Enable memory tracking for reflect data."					ON)
 
 # Build type
