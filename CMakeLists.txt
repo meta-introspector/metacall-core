@@ -24,6 +24,8 @@
 # CMake version
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 
+
+
 # Include cmake modules
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
@@ -91,14 +93,19 @@ option(OPTION_BUILD_GUIX		"Disable all build system unreproductible operations."
 option(OPTION_GIT_HOOKS			"Disable git hooks when running in CI/CD."					ON)
 option(OPTION_FORK_SAFE			"Enable fork safety."										ON)
 option(OPTION_THREAD_SAFE		"Enable thread safety."										OFF)
-option(OPTION_COVERAGE			"Enable coverage."											ON)
+# FIXME coverage failed on geninfo: ERROR: cannot read /mnt/data1/2023/12/07/meta-call-core/build/source/metacall/CMakeFiles/metacall.dir/__/__/build/source/dynlink/source/dynlink_interface.c.gcno!
+option(OPTION_COVERAGE			"Enable coverage."											OFF)
 option(OPTION_MEMORY_TRACKER	"Enable memory tracking for reflect data."					ON)
 
 # Build type
-if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
-	set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Define the type of build." FORCE)
-	set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "RelWithDebInfo" "MinSizeRel")
-endif()
+set(CMAKE_BUILD_TYPE Debug CACHE STRING "Build type" FORCE)
+
+set(CMAKE_CXX_FLAGS  -g)
+	
+#if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+
+#	set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "RelWithDebInfo" "MinSizeRel")
+#endif()
 
 # Binary directory
 if ("${CMAKE_GENERATOR}" MATCHES "^(Visual Studio)")
